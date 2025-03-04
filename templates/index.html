@@ -14,6 +14,26 @@
         <p id="strengthText"></p>
     </div>
 
-   
+    <script>
+        document.getElementById("password").addEventListener("input", function() {
+            let password = this.value;
+            fetch("/check", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ password: password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                let strengthBar = document.getElementById("strengthBar");
+                let strengthText = document.getElementById("strengthText");
+
+                strengthBar.style.background = data.color;
+                strengthBar.style.width = data.strength === "Very Weak" ? "25%" :
+                                          data.strength === "Weak" ? "50%" :
+                                          data.strength === "Moderate" ? "75%" : "100%";
+                strengthText.innerText = data.strength;
+            });
+        });
+    </script>
 </body>
 </html>
