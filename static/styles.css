@@ -27,3 +27,24 @@ h2 {
     color: #333;
 }
 
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.strength-bar {
+    height: 10px;
+    width: 100%;
+    background: #ddd;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+p {
+    margin-top: 10px;
+    font-weight: bold;
+}
