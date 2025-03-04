@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-  
+    <div class="container">
+        <h2>Password Strength Checker</h2>
+        <input type="password" id="password" placeholder="Enter your password...">
+        <div class="strength-bar" id="strengthBar"></div>
+        <p id="strengthText"></p>
+    </div>
+
+   
 </body>
 </html>
